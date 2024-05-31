@@ -1,7 +1,7 @@
 import { Database } from '@hocuspocus/extension-database';
 import { Server } from '@hocuspocus/server';
-import { eq } from 'drizzle-orm';
-import { customType, pgTable, serial } from 'drizzle-orm/pg-core';
+import { eq, is, like } from 'drizzle-orm';
+import { customType, pgTable, text, } from 'drizzle-orm/pg-core';
 import type { DatabaseConnection } from './type';
 
 const byteaType = customType<{
@@ -15,7 +15,7 @@ const byteaType = customType<{
 });
 
 const documentTable = pgTable('Document', {
-  id: serial('id').primaryKey(),
+  id: text("id").primaryKey(),
   data: byteaType('data'),
 });
 
@@ -36,23 +36,34 @@ export function createCollaborationServer(param: {
     extensions: [
       new Database({
         async fetch(data) {
-          const documentId = parseInt(data.documentName);
-          const resultSet = await db
+
+
+          const documentId = data.documentName;
+          const rows = await db
             .select()
             .from(documentTable)
-            .where(eq(documentTable.id, documentId));
-          const documentRow = resultSet.at(0);
-          const documentData = documentRow?.data ?? null;
-          return documentData;
+            .where(like(documentTable.id, documentId));
+
+          if (rows && rows.length > 0) {
+            return rows[0].data?.length === 0 ? null : rows[0].data;
+          }
+          return null
+
         },
 
         async store(data) {
-          const documentId = parseInt(data.documentName);
+          const documentId = data.documentName.toString();
           const documentData = data.state;
-          await db
-            .update(documentTable)
-            .set({ data: documentData })
-            .where(eq(documentTable.id, documentId));
+          await db.insert(documentTable).values({
+            id: documentId,
+            data: documentData,
+          }).onConflictDoUpdate({
+            target: documentTable.id,
+            set: {
+              data: documentData
+            }
+          })
+
         },
       }),
     ],
