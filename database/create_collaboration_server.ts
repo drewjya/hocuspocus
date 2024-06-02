@@ -41,8 +41,12 @@ export function createCollaborationServer(param: {
           const documentId = data.documentName;
           const rows = await db
             .select()
+
+
             .from(documentTable)
+            .limit(1)
             .where(like(documentTable.id, documentId));
+
 
           if (rows && rows.length > 0) {
             return rows[0].data?.length === 0 ? null : rows[0].data;
@@ -54,6 +58,7 @@ export function createCollaborationServer(param: {
         async store(data) {
           const documentId = data.documentName.toString();
           const documentData = data.state;
+
           await db.insert(documentTable).values({
             id: documentId,
             data: documentData,
