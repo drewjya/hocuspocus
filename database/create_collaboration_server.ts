@@ -1,6 +1,6 @@
 import { Database } from '@hocuspocus/extension-database';
 import { Server } from '@hocuspocus/server';
-import { eq, is, like } from 'drizzle-orm';
+import { like } from 'drizzle-orm';
 import { customType, pgTable, text, } from 'drizzle-orm/pg-core';
 import type { DatabaseConnection } from './type';
 
