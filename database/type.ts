@@ -1,4 +1,4 @@
-import type { PostgresJsDatabase } from "drizzle-orm/postgres-js";
+import type { PostgresJsDatabase } from "npm:drizzle-orm/postgres-js";
 
 export interface ServerArgument {
     dbHost: string;

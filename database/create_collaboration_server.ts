@@ -1,11 +1,12 @@
-import { Database } from '@hocuspocus/extension-database';
-import { Server } from '@hocuspocus/server';
-import { like } from 'drizzle-orm';
-import { customType, pgTable, text, } from 'drizzle-orm/pg-core';
-import type { DatabaseConnection } from './type';
+import { Database } from 'npm:@hocuspocus/extension-database';
+import { Server } from 'npm:@hocuspocus/server';
+import { like } from 'npm:drizzle-orm';
+import { customType, pgTable, text } from 'npm:drizzle-orm/pg-core';
+import type { DatabaseConnection } from './type.ts';
+
 
 const byteaType = customType<{
-  data: Buffer;
+  data: Uint8Array;
   notNull: false;
   default: false;
 }>({

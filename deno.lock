@@ -1,0 +1,105 @@
+{
+  "version": "3",
+  "packages": {
+    "specifiers": {
+      "jsr:@std/bytes@^1.0.0-rc.3": "jsr:@std/bytes@1.0.0",
+      "jsr:@std/io": "jsr:@std/io@0.224.2",
+      "npm:@hocuspocus/extension-database": "npm:@hocuspocus/extension-database@2.13.2_yjs@13.6.18",
+      "npm:@hocuspocus/server": "npm:@hocuspocus/server@2.13.2_y-protocols@1.0.6__yjs@13.6.18_yjs@13.6.18",
+      "npm:@types/node": "npm:@types/node@18.16.19",
+      "npm:drizzle-orm": "npm:drizzle-orm@0.31.2",
+      "npm:postgres": "npm:postgres@3.4.4"
+    },
+    "jsr": {
+      "@std/bytes@1.0.0": {
+        "integrity": "9392e72af80adccaa1197912fa19990ed091cb98d5c9c4344b0c301b22d7c632"
+      },
+      "@std/io@0.224.2": {
+        "integrity": "25ecd4f674527d660ab09e571e15eb541e8eb8a4575f2d20bdbf029374a609b5",
+        "dependencies": [
+          "jsr:@std/bytes@^1.0.0-rc.3"
+        ]
+      }
+    },
+    "npm": {
+      "@hocuspocus/common@2.13.2": {
+        "integrity": "sha512-NMsXx/Dl9xu1KlhNbGzLYLOjKtUOVmU+zA/br+EA4DhNDEtGWvHAmqY5r9SBTr2mGtGJagt+GEqZydSzBUFj4g==",
+        "dependencies": {
+          "lib0": "lib0@0.2.94"
+        }
+      },
+      "@hocuspocus/extension-database@2.13.2_yjs@13.6.18": {
+        "integrity": "sha512-6Spshtc640INRRkjRTu27csdmm3qOUfrAET4xNjriyOEAQoIMwQqAvyXEHPXPbs2YQCuahnM5On7iROu5Rn/qA==",
+        "dependencies": {
+          "@hocuspocus/server": "@hocuspocus/server@2.13.2_y-protocols@1.0.6__yjs@13.6.18_yjs@13.6.18",
+          "yjs": "yjs@13.6.18"
+        }
+      },
+      "@hocuspocus/server@2.13.2_y-protocols@1.0.6__yjs@13.6.18_yjs@13.6.18": {
+        "integrity": "sha512-crUuMJaK8Ql6zC9x+N0kwKlHTZ2pXV7hG2yOQj5ieGxnQtX4uExU77yS9vji9R7w10YcPnkDwvwPMgeyWhwRfQ==",
+        "dependencies": {
+          "@hocuspocus/common": "@hocuspocus/common@2.13.2",
+          "async-lock": "async-lock@1.4.1",
+          "kleur": "kleur@4.1.5",
+          "lib0": "lib0@0.2.94",
+          "uuid": "uuid@10.0.0",
+          "ws": "ws@8.17.1",
+          "y-protocols": "y-protocols@1.0.6_yjs@13.6.18",
+          "yjs": "yjs@13.6.18"
+        }
+      },
+      "@types/node@18.16.19": {
+        "integrity": "sha512-IXl7o+R9iti9eBW4Wg2hx1xQDig183jj7YLn8F7udNceyfkbn1ZxmzZXuak20gR40D7pIkIY1kYGx5VIGbaHKA==",
+        "dependencies": {}
+      },
+      "async-lock@1.4.1": {
+        "integrity": "sha512-Az2ZTpuytrtqENulXwO3GGv1Bztugx6TT37NIo7imr/Qo0gsYiGtSdBa2B6fsXhTpVZDNfu1Qn3pk531e3q+nQ==",
+        "dependencies": {}
+      },
+      "drizzle-orm@0.31.2": {
+        "integrity": "sha512-QnenevbnnAzmbNzQwbhklvIYrDE8YER8K7kSrAWQSV1YvFCdSQPzj+jzqRdTSsV2cDqSpQ0NXGyL1G9I43LDLg==",
+        "dependencies": {}
+      },
+      "isomorphic.js@0.2.5": {
+        "integrity": "sha512-PIeMbHqMt4DnUP3MA/Flc0HElYjMXArsw1qwJZcm9sqR8mq3l8NYizFMty0pWwE/tzIGH3EKK5+jes5mAr85yw==",
+        "dependencies": {}
+      },
+      "kleur@4.1.5": {
+        "integrity": "sha512-o+NO+8WrRiQEE4/7nwRJhN1HWpVmJm511pBHUxPLtp0BUISzlBplORYSmTclCnJvQq2tKu/sgl3xVpkc7ZWuQQ==",
+        "dependencies": {}
+      },
+      "lib0@0.2.94": {
+        "integrity": "sha512-hZ3p54jL4Wpu7IOg26uC7dnEWiMyNlUrb9KoG7+xYs45WkQwpVvKFndVq2+pqLYKe1u8Fp3+zAfZHVvTK34PvQ==",
+        "dependencies": {
+          "isomorphic.js": "isomorphic.js@0.2.5"
+        }
+      },
+      "postgres@3.4.4": {
+        "integrity": "sha512-IbyN+9KslkqcXa8AO9fxpk97PA4pzewvpi2B3Dwy9u4zpV32QicaEdgmF3eSQUzdRk7ttDHQejNgAEr4XoeH4A==",
+        "dependencies": {}
+      },
+      "uuid@10.0.0": {
+        "integrity": "sha512-8XkAphELsDnEGrDxUOHB3RGvXz6TeuYSGEZBOjtTtPm2lwhGBjLgOzLHB63IUWfBpNucQjND6d3AOudO+H3RWQ==",
+        "dependencies": {}
+      },
+      "ws@8.17.1": {
+        "integrity": "sha512-6XQFvXTkbfUOZOKKILFG1PDK2NDQs4azKQl26T0YS5CxqWLgXajbPZ+h4gZekJyRqFU8pvnbAbbs/3TgRPy+GQ==",
+        "dependencies": {}
+      },
+      "y-protocols@1.0.6_yjs@13.6.18": {
+        "integrity": "sha512-vHRF2L6iT3rwj1jub/K5tYcTT/mEYDUppgNPXwp8fmLpui9f7Yeq3OEtTLVF012j39QnV+KEQpNqoN7CWU7Y9Q==",
+        "dependencies": {
+          "lib0": "lib0@0.2.94",
+          "yjs": "yjs@13.6.18"
+        }
+      },
+      "yjs@13.6.18": {
+        "integrity": "sha512-GBTjO4QCmv2HFKFkYIJl7U77hIB1o22vSCSQD1Ge8ZxWbIbn8AltI4gyXbtL+g5/GJep67HCMq3Y5AmNwDSyEg==",
+        "dependencies": {
+          "lib0": "lib0@0.2.94"
+        }
+      }
+    }
+  },
+  "remote": {}
+}
