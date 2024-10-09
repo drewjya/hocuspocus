@@ -6,7 +6,7 @@ import { DatabaseConnection } from "./type.ts";
 export function createDatabaseConnection(): DatabaseConnection {
   return drizzle(
     postgres(
-        'postgresql://postgres:Wkmp778899@localhost:5432/sectask',
+        'postgresql://username:password@localhost:5432/interlink',
     ),
   );
 }
